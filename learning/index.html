@@ -41,68 +41,25 @@
 </div>
 <div id="app-7">
 <ol>
-    <todo-item></todo-item>
+    <todo-item
+v-for='item in groceryList'
+v-bind:todo='item'
+v-bind:key='item.id'
+></todo-item>
 </ol>
 </div>
-  <script>
-  var app = new Vue({
-      el: '#app',
-      data: {
-          message: 'Hello first world'
-      }
-  });
-  var app2 = new Vue({
-      el: '#app-2',
-      data: {
-          message: 'This div is downloaded at ' + new Date().toLocaleString()
-      }
-  });
-  var app3 = new Vue({
-      el: '#app-3',
-      data: {
-          seen: true
-      }
-  });
-  var app4 = new Vue({
-      el: '#app-4',
-      data: {
-    todos: [
-      { text: 'Learn JavaScript' },
-      { text: 'Learn Vue' },
-      { text: 'Build something awesome' }
-    ]
-  }
-  });
-  var app5 = new Vue({
-      el: '#app-5',
-      data: {
-          message: 'Hello Vue.js'
-      },
-      methods: {
-          reverseMessage: function(){
-              this.message = this.message.split('').reverse().join('')
-          }
-      }
-  });
-  var app6 = new Vue({
-      el: '#app-6',
-      data: {
-          message: 'Hello Vue'
-      }
-  });
-  Vue.component('todo-item', {
-      props: ['todo'],
-      template: '<li>Todo item</li>'
-  })
-  var app7 = new Vue({
-      el: '#app-7',
-      data: {
-          groceryList: [
-              {id:0, text:'Vegitables'},
-              {id:1, text: 'Cheese'}
-          ]
-      }
-  })
-  </script>
+<div id="app-8">
+<p>{{ a }}</p>
+</div>
+<div id="app-9">
+<p>{{ message }}</p>
+<p>Computed reverse message: {{reverseMessage}}</p>
+<p>{{ now() }}</p>
+</div>
+<div id="app-10">
+{{ fullName }}
+</div>
+
+<script src="index.js"></script>
 </body>
 </html>
